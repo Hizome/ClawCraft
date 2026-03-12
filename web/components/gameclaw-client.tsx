@@ -10,7 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 
 type ScreenState = "landing" | "race-select" | "race-hud";
 
-export function WarClawClient() {
+export function ClawCraftClient() {
   const gatewayRef = useRef<GatewayClient | null>(null);
   const activeRunIdRef = useRef<string | null>(null);
 
@@ -87,8 +87,8 @@ export function WarClawClient() {
           {screen === "landing" ? (
             <Card className="relative z-10 h-[720px] w-full max-w-xl">
               <CardHeader>
-                <span className="text-center text-xs uppercase tracking-[0.18em] text-[#89a6c8]">WarClaw</span>
-                <CardTitle className="text-center text-2xl font-bold md:text-4xl">WarClaw Command Table</CardTitle>
+                <span className="text-center text-xs uppercase tracking-[0.18em] text-[#89a6c8]">ClawCraft</span>
+                <CardTitle className="text-center text-2xl font-bold md:text-4xl">ClawCraft Command Table</CardTitle>
                 <CardDescription className="mt-4 text-center text-white/90">
                   Command your OpenClaw session from a Warcraft-inspired interface. Enter through the gateway, then choose your faction.
                 </CardDescription>
@@ -97,7 +97,7 @@ export function WarClawClient() {
                 <div className="flex size-48 items-center justify-center rounded-full border border-[#c8a96b]/50 bg-[radial-gradient(circle,#27486d_0%,#162638_55%,#0c1520_100%)] shadow-[0_0_80px_rgba(95,153,220,0.18)] md:size-64">
                   <div className="fantasy text-center">
                     <div className="text-5xl font-bold text-[#f4d38b] md:text-7xl">GC</div>
-                    <div className="mt-3 text-sm uppercase tracking-[0.35em] text-[#89a6c8]">War Nexus</div>
+                    <div className="mt-3 text-sm uppercase tracking-[0.35em] text-[#89a6c8]">Claw Nexus</div>
                   </div>
                 </div>
                 <p className="max-w-md text-center text-sm leading-7 text-white/80">

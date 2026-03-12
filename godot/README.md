@@ -1,4 +1,4 @@
-# WarClaw Godot Scaffold
+# ClawCraft Godot Scaffold
 
 Quick start (Linux, Godot 4.6.1):
 1. Open `project.godot` in Godot.

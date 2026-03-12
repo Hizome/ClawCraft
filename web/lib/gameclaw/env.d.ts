@@ -4,7 +4,7 @@ export {};
 
 declare global {
   interface Window {
-    warclawDesktop?: {
+    clawcraftDesktop?: {
       desktop: boolean;
       platform: string;
       getInfo: () => Promise<DesktopInfo>;

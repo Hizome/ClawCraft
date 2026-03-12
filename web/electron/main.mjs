@@ -28,7 +28,7 @@ function createWindow() {
     height: 960,
     minWidth: 1200,
     minHeight: 760,
-    title: "WarClaw",
+    title: "ClawCraft",
     icon: iconPath,
     backgroundColor: "#0b121c",
     autoHideMenuBar: true,
@@ -58,7 +58,7 @@ async function ensureRuntimePaths() {
   const userDataDir = app.getPath("userData");
   resourceDirectory = path.join(userDataDir, "resources");
   const logDirectory = path.join(userDataDir, "logs");
-  configFilePath = path.join(userDataDir, "warclaw-config.json");
+  configFilePath = path.join(userDataDir, "clawcraft-config.json");
   logFilePath = path.join(logDirectory, "desktop.log");
 
   await fs.mkdir(resourceDirectory, { recursive: true });

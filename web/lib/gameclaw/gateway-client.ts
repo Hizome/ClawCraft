@@ -85,7 +85,7 @@ export class GatewayClient {
           password: this.opts.password || undefined
         },
         client: {
-          id: "warclaw-web",
+          id: "clawcraft-web",
           mode: "world"
         }
       }

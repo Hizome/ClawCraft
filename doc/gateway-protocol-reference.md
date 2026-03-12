@@ -1,6 +1,6 @@
-# WarClaw：OpenClaw Gateway 协议参考（精简版）
+# ClawCraft：OpenClaw Gateway 协议参考（精简版）
 
-本文件面向 WarClaw 客户端实现，提供 Gateway WebSocket 连接、方法调用与事件流的**最小可用参考**。
+本文件面向 ClawCraft 客户端实现，提供 Gateway WebSocket 连接、方法调用与事件流的**最小可用参考**。
 
 > 说明：本参考基于 OpenClaw Control UI 的实现路径整理，字段名以源码为准。若 Gateway 协议后续升级，请以 `src/gateway/protocol/*` 与 `ui/src/ui/gateway.ts` 为主。
 
@@ -51,7 +51,7 @@
 
 ---
 
-## 3. 常用方法清单（WarClaw MVP 级别）
+## 3. 常用方法清单（ClawCraft MVP 级别）
 
 ### 3.1 `chat.send`
 **用途**：向 agent 发送用户消息。
@@ -80,7 +80,7 @@
 - `src/gateway/server-methods/tools-catalog.ts`
 
 ### 3.5 `exec.approvals.*`
-**用途**：外部执行审批（若 WarClaw 要提供此能力）。
+**用途**：外部执行审批（若 ClawCraft 要提供此能力）。
 
 参考实现：
 - `src/gateway/server-methods/exec-approvals.ts`
@@ -117,7 +117,7 @@
 
 ---
 
-## 6. 推荐实现策略（WarClaw 端）
+## 6. 推荐实现策略（ClawCraft 端）
 
 1. 基于 Control UI 的 `GatewayBrowserClient` 逻辑实现 WS 客户端。
 2. 最小接入：`chat.send` + `chat.history` + `chat` 事件。

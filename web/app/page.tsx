@@ -1,5 +1,5 @@
-import { WarClawClient } from "../components/gameclaw-client";
+import { ClawCraftClient } from "../components/gameclaw-client";
 
 export default function HomePage() {
-  return <WarClawClient />;
+  return <ClawCraftClient />;
 }

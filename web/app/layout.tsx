@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "WarClaw War Table",
-  description: "Warcraft-inspired WarClaw desktop and web client.",
+  title: "ClawCraft War Table",
+  description: "Warcraft-inspired ClawCraft desktop and web client.",
   icons: {
     icon: "/assets/BTNPeasant-Reforged.webp",
     shortcut: "/assets/BTNPeasant-Reforged.webp",

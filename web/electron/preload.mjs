@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer } from "electron";
 
-contextBridge.exposeInMainWorld("warclawDesktop", {
+contextBridge.exposeInMainWorld("clawcraftDesktop", {
   desktop: true,
   platform: process.platform,
   getInfo: () => ipcRenderer.invoke("desktop:get-info"),

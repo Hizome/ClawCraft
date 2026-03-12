@@ -3,7 +3,7 @@
   "configVersion": 0,
   "workspaces": {
     "": {
-      "name": "warclaw-web",
+      "name": "clawcraft-web",
       "dependencies": {
         "next": "^16.0.1",
         "react": "^19.2.0",

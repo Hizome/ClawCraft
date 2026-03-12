@@ -1,8 +1,8 @@
 {
-  "name": "warclaw-web",
+  "name": "clawcraft-web",
   "private": true,
   "version": "0.0.1",
-  "description": "WarClaw desktop client built from the web frontend.",
+  "description": "ClawCraft desktop client built from the web frontend.",
   "engines": {
     "node": ">=20",
     "npm": ">=10",
@@ -12,7 +12,7 @@
     "name": "Harry",
     "email": "harry@example.com"
   },
-  "homepage": "https://example.com/warclaw",
+  "homepage": "https://example.com/clawcraft",
   "type": "module",
   "main": "electron/main.mjs",
   "scripts": {
@@ -24,17 +24,16 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "mdx-m3-viewer": "^5.12.0",
     "next": "^16.0.1",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "three": "^0.183.2"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
-    "@types/three": "^0.183.0",
     "concurrently": "^9.2.1",
     "electron": "^41.0.0",
     "electron-builder": "^26.8.1",
@@ -44,8 +43,8 @@
     "wait-on": "^9.0.4"
   },
   "build": {
-    "appId": "com.warclaw.desktop",
-    "productName": "WarClaw",
+    "appId": "com.clawcraft.desktop",
+    "productName": "ClawCraft",
     "directories": {
       "output": "release"
     },

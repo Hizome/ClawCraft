@@ -1,4 +1,4 @@
-# WarClaw MVP 计划（阶段拆分）
+# ClawCraft MVP 计划（阶段拆分）
 
 目标：用 2D 游戏式 UI 驱动 OpenClaw Gateway，完成基础对话与会话管理。
 

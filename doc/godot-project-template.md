@@ -1,6 +1,6 @@
-# WarClaw：Godot 工程结构模板（含 Gateway 客户端骨架）
+# ClawCraft：Godot 工程结构模板（含 Gateway 客户端骨架）
 
-本模板用于快速搭建 WarClaw（Godot）工程，覆盖：
+本模板用于快速搭建 ClawCraft（Godot）工程，覆盖：
 - 网络层（Gateway WebSocket 客户端）
 - UI 层（场景/状态机）
 - 资源层（角色/NPC/关卡）
@@ -12,7 +12,7 @@
 
 ```
 res://
-  WarClaw.tscn                 # 主场景
+  ClawCraft.tscn               # 主场景
   autoload/
     App.gd                      # 全局入口（单例）
     Config.gd                   # 配置读取/保存

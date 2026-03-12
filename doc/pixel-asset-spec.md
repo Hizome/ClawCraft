@@ -1,6 +1,6 @@
-# WarClaw 像素资源规范
+# ClawCraft 像素资源规范
 
-本文档定义 WarClaw Web 前端当前阶段的 2D 俯视像素资源标准，目标是统一地图、角色、物件和 UI 资源的制作与导入方式，避免后续返工。
+本文档定义 ClawCraft Web 前端当前阶段的 2D 俯视像素资源标准，目标是统一地图、角色、物件和 UI 资源的制作与导入方式，避免后续返工。
 
 ---
 
@@ -366,13 +366,13 @@ web/src/assets/
 - `town.json`
   - 主地图
 
-这套资源就足够支持第一版“玩家在城镇中与 Agent NPC 对话”的 WarClaw Web 前端。
+这套资源就足够支持第一版“玩家在城镇中与 Agent NPC 对话”的 ClawCraft Web 前端。
 
 ---
 
 ## 12. 一句话结论
 
-WarClaw 当前应统一采用：
+ClawCraft 当前应统一采用：
 
 - `PNG` 作为原始像素资源格式
 - `16x16` 作为基础地图 tile 标准

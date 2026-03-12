@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="./web/public/assets/BTNPeasant-Reforged.webp" alt="WarClaw icon" width="128" height="128" />
+  <img src="./web/public/assets/BTNPeasant-Reforged.webp" alt="ClawCraft icon" width="128" height="128" />
 </p>
 
 <p align="center">
-  <h1 align="center">WarClaw</h1>
+  <h1 align="center">ClawCraft</h1>
 </p>
 
 <p align="center">
@@ -24,7 +24,7 @@
 
 ## Overview
 
-WarClaw is a game-style frontend for OpenClaw.  
+ClawCraft is a game-style frontend for OpenClaw.  
 The current project direction is:
 
 - `web/`: the main active client, built with Next.js, React, Tailwind, and Electron support
@@ -53,7 +53,7 @@ The current Web client already includes:
 .
 ├── doc/      Project plans, protocol docs, asset specs
 ├── godot/    Godot prototype scaffold
-└── web/      Main WarClaw client
+└── web/      Main ClawCraft client
 ```
 
 ## Quick Start

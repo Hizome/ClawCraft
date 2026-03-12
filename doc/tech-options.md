@@ -1,4 +1,4 @@
-# WarClaw：跨端 2D 游戏式 OpenClaw 前端 — 扩展方案与接口参考
+# ClawCraft：跨端 2D 游戏式 OpenClaw 前端 — 扩展方案与接口参考
 
 目标：用“任天堂 2D 游戏”的交互方式替代 Telegram/系统 GUI，作为 OpenClaw 的主要操控前端。该前端需跨端（桌面/移动/网页/TV 可选），并与 OpenClaw Gateway 通信，完成对话、工具调用、会话管理与状态监控。
 
@@ -65,11 +65,11 @@
 
 ---
 
-### 方案 D：本地代理（WarClaw Gateway Proxy）
+### 方案 D：本地代理（ClawCraft Gateway Proxy）
 
 **核心思路**
 - 本地轻量 Proxy 负责与 OpenClaw Gateway 连接与认证。
-- WarClaw 客户端只连 Proxy（简化协议）。
+- ClawCraft 客户端只连 Proxy（简化协议）。
 
 **适合场景**
 - 大量客户端设备接入
@@ -104,11 +104,11 @@
 
 ## 2. OpenClaw 连接方式与接口参考（关键必读）
 
-下面整理 OpenClaw 控制面（Gateway）的实际连接方式与调用路径，作为 WarClaw 实现参考。
+下面整理 OpenClaw 控制面（Gateway）的实际连接方式与调用路径，作为 ClawCraft 实现参考。
 
 ### 2.1 静态资源 & Bootstrap
 
-- Control UI 静态资源由 Gateway 托管，WarClaw 如使用 Web 方案可复用。
+- Control UI 静态资源由 Gateway 托管，ClawCraft 如使用 Web 方案可复用。
 - UI 启动时读取 `/_ _openclaw/control-ui-config.json` 获取助手身份与版本。
 
 参考实现：
@@ -176,7 +176,7 @@ Gateway 所有 RPC 方法经 `handleGatewayRequest` 统一分发。
 
 ## 3. 外部渠道（Telegram）连接方式参考
 
-WarClaw 若作为替代 UI，可不依赖 Telegram，但理解其链路对设计交互有帮助。
+ClawCraft 若作为替代 UI，可不依赖 Telegram，但理解其链路对设计交互有帮助。
 
 ### 3.1 插件注册
 
@@ -210,7 +210,7 @@ ChannelManager 启动 plugin 账号：
 
 ---
 
-## 4. WarClaw 的最小协议实现清单（建议）
+## 4. ClawCraft 的最小协议实现清单（建议）
 
 1. **WS 连接 + connect 协议**
    - token/password

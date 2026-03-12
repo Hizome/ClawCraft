@@ -1,4 +1,4 @@
-# WarClaw Next/Desktop
+# ClawCraft Next/Desktop
 
 Next.js App Router + React + Tailwind desktop/web client.
 
@@ -89,7 +89,7 @@ Desktop artifacts are emitted to `release/`.
 
 ## Desktop runtime files
 
-When running the packaged Electron app, WarClaw creates:
+When running the packaged Electron app, ClawCraft creates:
 
 - a desktop config file for Gateway settings
 - a local resources directory for imported assets
