@@ -1,11 +1,25 @@
-# WarClaw
-
 <p align="center">
   <img src="./web/public/assets/BTNPeasant-Reforged.webp" alt="WarClaw icon" width="128" height="128" />
 </p>
 
 <p align="center">
-  Warcraft-inspired OpenClaw client for Web, Desktop, and future Godot experiments.
+  <h1 align="center">WarClaw</h1>
+</p>
+
+<p align="center">
+  A Warcraft-inspired OpenClaw client for Web, Desktop, and future Godot experiments.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-black?style=flat-square" alt="Next.js 16" />
+  <img src="https://img.shields.io/badge/React-19-149eca?style=flat-square" alt="React 19" />
+  <img src="https://img.shields.io/badge/UI-Warcraft%20III%20Style-3b6ea8?style=flat-square" alt="Warcraft III Style UI" />
+  <img src="https://img.shields.io/badge/Desktop-Electron-4b5563?style=flat-square" alt="Electron" />
+  <img src="https://img.shields.io/badge/Engine-Godot%204.6-478cbf?style=flat-square" alt="Godot 4.6" />
+</p>
+
+<p align="center">
+  <i>Faction-select launch flow · Warcraft III HUD variants · Desktop packaging · OpenClaw gateway integration</i>
 </p>
 
 ## Overview
