@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./web/public/assets/claw.png" alt="ClawCraft icon" width="128" height="128" />
+  <img src="./web/public/assets/claw.jpg" alt="ClawCraft icon" width="128" height="128" />
 </p>
 
 <p align="center">
