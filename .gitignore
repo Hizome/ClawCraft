@@ -1,0 +1,59 @@
+# Node/Vite
+node_modules/
+.pnpm-store/
+.pnp.cjs
+.pnp.data.json
+dist/
+coverage/
+.turbo/
+*.tsbuildinfo
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Godot
+.godot/
+.import/
+*.import
+*.translation
+export_presets.cfg
+
+# Build outputs
+*.exe
+*.app
+*.dmg
+*.apk
+*.aab
+*.ipa
+*.zip
+*.tar.gz
+
+# Temp
+*.tmp
+*.swp
+
+# Web / Next / Electron
+web/node_modules/
+web/.next/
+web/out/
+web/dist/
+web/release/
+web/coverage/
+web/.turbo/

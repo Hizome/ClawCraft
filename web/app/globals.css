@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --bg-top: #0c1727;
+  --bg-bottom: #09111a;
+  --panel: rgba(11, 19, 31, 0.92);
+  --panel-strong: rgba(14, 24, 39, 0.96);
+  --border-steel: rgba(117, 133, 158, 0.7);
+  --border-gold: rgba(187, 160, 104, 0.95);
+  --text-main: #e9dec0;
+  --text-dim: #98a7ba;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top, rgba(83, 113, 153, 0.22), transparent 40%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  color: var(--text-main);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fantasy {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.02em;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.war3-cursored,
+.war3-cursored * {
+  cursor: none !important;
+}
+
+.war3-race-cursor {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+}
+
+.war3-race-cursor--default {
+  background-position: 0 0;
+}
+
+.war3-race-cursor--default-active {
+  animation: war3-cursor-default 500ms steps(8) infinite;
+}
+
+.war3-race-cursor--pointer {
+  background-position: -32px -96px;
+}
+
+.war3-race-cursor--pointer-active {
+  animation: war3-cursor-pointer 500ms steps(8) infinite;
+}
+
+@keyframes war3-cursor-default {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -256px 0;
+  }
+}
+
+@keyframes war3-cursor-pointer {
+  from {
+    background-position: 0 -64px;
+  }
+  to {
+    background-position: -256px -64px;
+  }
+}
+
+.war3-race-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: var(--war3-btn-default) center / 100% 100% no-repeat;
+  color: #f8f8f7;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  user-select: none;
+}
+
+.war3-race-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--war3-btn-hover) center / 100% 100% no-repeat;
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.war3-race-button:hover::before {
+  opacity: 1;
+}
+
+.war3-race-button:active {
+  background-image: var(--war3-btn-pressed);
+}
+
+.war3-race-button:disabled {
+  background-image: var(--war3-btn-disabled);
+  color: #646464;
+}
+
+.war3-race-button__caption {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+.war3-race-button:active .war3-race-button__caption {
+  left: 3px;
+  top: 2px;
+}
+
+.war3-floating-panel {
+  border: 1px solid rgba(177, 133, 66, 0.92);
+  background:
+    linear-gradient(180deg, rgba(21, 35, 56, 0.96), rgba(8, 14, 24, 0.94)),
+    radial-gradient(circle at top, rgba(112, 173, 255, 0.12), transparent 55%);
+  box-shadow:
+    inset 0 0 0 1px rgba(109, 156, 214, 0.16),
+    0 14px 36px rgba(0, 0, 0, 0.42);
+  padding: 16px 18px;
+}
+
+.war3-floating-panel__title {
+  margin-bottom: 10px;
+  color: #f3d79b;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.war3-console-input {
+  min-width: 0;
+  border: 1px solid rgba(130, 159, 193, 0.4);
+  background: rgba(4, 10, 18, 0.4);
+  color: #f3f7ff;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.war3-console-input::placeholder {
+  color: #8fa0b6;
+}
+
+.war3-console-input:focus {
+  border-color: rgba(221, 184, 112, 0.76);
+  box-shadow: 0 0 0 1px rgba(221, 184, 112, 0.2);
+}
+
+.war-panel {
+  border: 1px solid var(--border-gold);
+  background: linear-gradient(180deg, rgba(30, 45, 68, 0.94), rgba(11, 19, 31, 0.94));
+  box-shadow:
+    inset 0 0 0 1px rgba(123, 143, 170, 0.22),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+.war-input {
+  border: 1px solid rgba(109, 128, 153, 0.8);
+  background: rgba(4, 10, 18, 0.72);
+  color: var(--text-main);
+}
+
+.war-input::placeholder {
+  color: #7d899a;
+}
+
+.war-button {
+  min-height: 44px;
+  border: 1px solid var(--border-steel);
+  background: linear-gradient(180deg, rgba(54, 71, 97, 0.92), rgba(21, 31, 46, 0.92));
+  color: var(--text-main);
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.wc-btn-border {
+  border-image-source: url("/warcraftcn/assets/button-bg.webp");
+}
+
+.wc-btn-border-frame {
+  border-image-source: url("/warcraftcn/assets/button-bg-with-frame.webp");
+}
+
+.wc-card-border {
+  border-image-source: url("/warcraftcn/assets/card-bg.webp");
+}
+
+.wc-input-border {
+  border-image-source: url("/warcraftcn/assets/input-frame.webp");
+}
+
+.war-button:hover {
+  transform: translateY(-1px);
+  border-color: #d1b37a;
+  box-shadow: 0 0 0 1px rgba(209, 179, 122, 0.35);
+}
+
+.war-button-primary {
+  background: linear-gradient(180deg, rgba(39, 74, 119, 0.96), rgba(18, 39, 69, 0.96));
+}
+
+.war-button-accent {
+  background: linear-gradient(180deg, rgba(121, 69, 40, 0.96), rgba(73, 31, 17, 0.96));
+}
