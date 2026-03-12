@@ -75,7 +75,7 @@ export function RaceHud({ race }: { race: RaceKey }) {
   const timeDiscSize = headerHeight * 0.6;
   const timeDotSize = headerHeight * 0.15;
   const timeDotRadius = headerHeight * 0.4;
-  const hudWidth = "min(100vw, 1600px)";
+  const hudWidth = "100vw";
 
   return (
     <div className="absolute inset-0 z-30 bg-black" data-war3-cursor-scope>
@@ -86,7 +86,7 @@ export function RaceHud({ race }: { race: RaceKey }) {
         className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2"
         style={{
           width: hudWidth,
-          height: "calc(min(100vw, 1600px) * 94 / 1600)"
+          height: "calc(100vw * 94 / 1600)"
         }}
       >
         <div className="absolute inset-0 flex items-center justify-center">
@@ -154,7 +154,7 @@ export function RaceHud({ race }: { race: RaceKey }) {
         className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2"
         style={{
           width: hudWidth,
-          height: "calc(min(100vw, 1600px) * 327 / 1600)",
+          height: "calc(100vw * 327 / 1600)",
           background: "linear-gradient(#0000 25%, black 25%)"
         }}
       >
