@@ -57,3 +57,10 @@ web/dist/
 web/release/
 web/coverage/
 web/.turbo/
+
+# Copied Warcraft texture trees
+web/public/assets/materials/Textures/
+web/public/assets/materials/ReplaceableTextures/
+
+# Runtime model assets
+web/public/assets/*.mdx

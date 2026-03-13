@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   title: "ClawCraft War Table",
   description: "Warcraft-inspired ClawCraft desktop and web client.",
   icons: {
-    icon: "/assets/BTNPeasant-Reforged.webp",
-    shortcut: "/assets/BTNPeasant-Reforged.webp",
-    apple: "/assets/BTNPeasant-Reforged.webp"
+    icon: "/assets/images/claw.jpg",
+    shortcut: "/assets/images/claw.jpg",
+    apple: "/assets/images/claw.jpg"
   }
 };
 

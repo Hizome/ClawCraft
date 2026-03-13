@@ -1,0 +1,20 @@
+{
+  "race": "hum",
+  "buildings": [
+    {
+      "id": "goldmine-main",
+      "label": "Goldmine",
+      "modelPath": "/assets/gold.mdx",
+      "assetDirectory": "/assets/materials",
+      "transform": {
+        "x": -325,
+        "y": 225,
+        "z": -512,
+        "rotX": 172,
+        "rotY": -160,
+        "rotZ": 92,
+        "scale": 0.8
+      }
+    }
+  ]
+}

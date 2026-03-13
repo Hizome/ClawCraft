@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { DEFAULT_CONFIG } from "../lib/gameclaw/defaults";
 import { GatewayClient } from "../lib/gameclaw/gateway-client";
+import type { RaceKey } from "../lib/gameclaw/race-layouts";
 import type { ChatEventPayload } from "../lib/gameclaw/types";
-import { RaceHud, type RaceKey } from "./war3/race-hud";
+import { RaceHud } from "./war3/race-hud";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 

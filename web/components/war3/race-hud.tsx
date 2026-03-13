@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import type { RaceKey } from "../../lib/gameclaw/race-layouts";
+import { MdxStage } from "../mdx/mdx-stage";
 import { RaceCursor } from "./race-cursor";
-
-export type RaceKey = "hum" | "orc" | "nel" | "und";
 
 const RACE_LABELS: Record<RaceKey, string> = {
   hum: "Human",
@@ -45,6 +45,7 @@ function RaceButton({
 export function RaceHud({ race }: { race: RaceKey }) {
   const [timeProgress, setTimeProgress] = useState(0.2);
   const [headerHeight, setHeaderHeight] = useState(94);
+  const [hudVisible, setHudVisible] = useState(true);
   const headerRef = useRef<HTMLElement | null>(null);
   const assetBase = `/war3/${race}`;
 
@@ -79,91 +80,123 @@ export function RaceHud({ race }: { race: RaceKey }) {
 
   return (
     <div className="absolute inset-0 z-30 bg-black" data-war3-cursor-scope>
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          alt="Warcraft map background"
+          className="h-full w-full object-cover object-center"
+          draggable={false}
+          src="/assets/images/background.png"
+        />
+      </div>
+      <MdxStage race={race} />
       <RaceCursor assetBase={assetBase} />
 
-      <header
-        ref={headerRef}
-        className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2"
-        style={{
-          width: hudWidth,
-          height: "calc(100vw * 94 / 1600)"
-        }}
+      <div
+        className="pointer-events-auto absolute right-4 z-30 flex flex-col gap-2"
+        style={{ top: "calc((100vw * 94 / 1600) + 8px)" }}
       >
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div
-            className="relative rounded-full bg-cover"
+        <button
+          className="war3-hud-toggle"
+          onClick={() => setHudVisible((value) => !value)}
+          title={hudVisible ? "Hide HUD" : "Show HUD"}
+          type="button"
+        >
+          <img alt="" className="h-full w-full object-contain" src="/assets/images/hide.webp" />
+          <span className="sr-only">{hudVisible ? "Hide HUD" : "Show HUD"}</span>
+        </button>
+        <button className="war3-hud-toggle" title="Open modern HUD (coming soon)" type="button">
+          <img alt="" className="h-full w-full object-cover" src="/assets/images/claw.jpg" />
+          <span className="sr-only">Open modern HUD</span>
+        </button>
+      </div>
+
+      {hudVisible ? (
+        <>
+          <header
+            ref={headerRef}
+            className="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2"
             style={{
-              width: `${timeDiscSize}px`,
-              height: `${timeDiscSize}px`,
-              backgroundImage: "url('/war3/any/hud_time_indicator.png')",
-              backgroundPositionX: `${timeProgress * 200}%`,
-              backgroundPositionY: "center",
-              backgroundRepeat: "repeat-x"
+              width: hudWidth,
+              height: "calc(100vw * 94 / 1600)"
             }}
           >
-            {Array.from({ length: timeDots }).map((_, index) => (
+            <div className="absolute inset-0 flex items-center justify-center">
               <div
-                className={`absolute left-1/2 top-1/2 rounded-full ${isDay ? "bg-yellow-300" : "bg-cyan-300"}`}
-                key={index}
+                className="relative rounded-full bg-cover"
                 style={{
-                  width: `${timeDotSize}px`,
-                  height: `${timeDotSize}px`,
-                  transform: `translate(-50%, -50%) rotate(${index * 45 - 90}deg) translate(${timeDotRadius}px) rotate(${index * -45 + 90}deg)`
+                  width: `${timeDiscSize}px`,
+                  height: `${timeDiscSize}px`,
+                  backgroundImage: "url('/war3/any/hud_time_indicator.png')",
+                  backgroundPositionX: `${timeProgress * 200}%`,
+                  backgroundPositionY: "center",
+                  backgroundRepeat: "repeat-x"
                 }}
-              />
-            ))}
-          </div>
-        </div>
-
-        <img alt="" className="absolute inset-0 h-full w-full" src={`${assetBase}/hud_header.png`} />
-
-        <div className="absolute inset-x-0 top-0 flex h-[50%]">
-          <div className="pointer-events-auto flex h-full w-1/2 px-[0.5%] pb-[0.5%] pr-[7.5%] pt-[0.3%]">
-            <RaceButton assetBase={assetBase} className="h-full w-[24%]">
-              Quests
-            </RaceButton>
-            <RaceButton assetBase={assetBase} className="ml-[1.2%] h-full w-[24%]">
-              Menu
-            </RaceButton>
-            <RaceButton assetBase={assetBase} className="ml-[1.2%] h-full w-[24%]" disabled>
-              Allies
-            </RaceButton>
-            <RaceButton assetBase={assetBase} className="ml-[1.2%] h-full w-[24%]">
-              Log
-            </RaceButton>
-          </div>
-
-          <div className="flex h-full w-1/2 justify-between px-[0.3%] pb-[0.5%] pl-[7.5%] pt-[0.3%]">
-            <div className="flex h-full w-[23%] items-center justify-center">
-              <img alt="" className="h-full w-auto" src="/war3/any/resource_icons/gold.png" />
+              >
+                {Array.from({ length: timeDots }).map((_, index) => (
+                  <div
+                    className={`absolute left-1/2 top-1/2 rounded-full ${isDay ? "bg-yellow-300" : "bg-cyan-300"}`}
+                    key={index}
+                    style={{
+                      width: `${timeDotSize}px`,
+                      height: `${timeDotSize}px`,
+                      transform: `translate(-50%, -50%) rotate(${index * 45 - 90}deg) translate(${timeDotRadius}px) rotate(${index * -45 + 90}deg)`
+                    }}
+                  />
+                ))}
+              </div>
             </div>
-            <div className="flex h-full w-[23%] items-center justify-center">
-              <img alt="" className="h-full w-auto" src="/war3/any/resource_icons/lumber.png" />
-            </div>
-            <div className="flex h-full w-[23%] items-center justify-center">
-              <img alt="" className="h-full w-auto" src="/war3/any/resource_icons/supply.png" />
-            </div>
-            <div className="flex h-full w-[23%] items-center justify-center text-[#00f000]">
-              <span>{RACE_LABELS[race]}</span>
-            </div>
-          </div>
-        </div>
-      </header>
 
-      <footer
-        className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2"
-        style={{
-          width: hudWidth,
-          height: "calc(100vw * 327 / 1600)",
-          background: "linear-gradient(#0000 25%, black 25%)"
-        }}
-      >
-        <img alt="" className="absolute inset-0 h-full w-full" src={`${assetBase}/hud_footer.png`} />
+            <img alt="" className="absolute inset-0 h-full w-full" src={`${assetBase}/hud_header.png`} />
 
-        <div className="absolute left-[59%] top-0 h-full">
-          <img alt="" className="h-full w-auto" src={`${assetBase}/hud_inv_mock.png`} />
-        </div>
-      </footer>
+            <div className="absolute inset-x-0 top-0 flex h-[50%]">
+              <div className="pointer-events-auto flex h-full w-1/2 px-[0.5%] pb-[0.5%] pr-[7.5%] pt-[0.3%]">
+                <RaceButton assetBase={assetBase} className="h-full w-[24%]">
+                  Quests
+                </RaceButton>
+                <RaceButton assetBase={assetBase} className="ml-[1.2%] h-full w-[24%]">
+                  Menu
+                </RaceButton>
+                <RaceButton assetBase={assetBase} className="ml-[1.2%] h-full w-[24%]" disabled>
+                  Allies
+                </RaceButton>
+                <RaceButton assetBase={assetBase} className="ml-[1.2%] h-full w-[24%]">
+                  Log
+                </RaceButton>
+              </div>
+
+              <div className="flex h-full w-1/2 justify-between px-[0.3%] pb-[0.5%] pl-[7.5%] pt-[0.3%]">
+                <div className="flex h-full w-[23%] items-center justify-center">
+                  <img alt="" className="h-full w-auto" src="/war3/any/resource_icons/gold.png" />
+                </div>
+                <div className="flex h-full w-[23%] items-center justify-center">
+                  <img alt="" className="h-full w-auto" src="/war3/any/resource_icons/lumber.png" />
+                </div>
+                <div className="flex h-full w-[23%] items-center justify-center">
+                  <img alt="" className="h-full w-auto" src="/war3/any/resource_icons/supply.png" />
+                </div>
+                <div className="flex h-full w-[23%] items-center justify-center text-[#00f000]">
+                  <span>{RACE_LABELS[race]}</span>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <footer
+            className="pointer-events-none absolute bottom-0 left-1/2 z-20 -translate-x-1/2"
+            style={{
+              width: hudWidth,
+              height: "calc(100vw * 327 / 1600)",
+              background: "linear-gradient(#0000 25%, black 25%)"
+            }}
+          >
+            <img alt="" className="absolute inset-0 h-full w-full" src={`${assetBase}/hud_footer.png`} />
+
+            <div className="absolute left-[59%] top-0 h-full">
+              <img alt="" className="h-full w-auto" src={`${assetBase}/hud_inv_mock.png`} />
+            </div>
+          </footer>
+        </>
+      ) : null}
     </div>
   );
 }
